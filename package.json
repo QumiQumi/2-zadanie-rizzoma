@@ -1,0 +1,27 @@
+{
+    "name": "2-zadanie-rizzoma",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "parcel src/index.pug --open",
+        "build": "parcel build src/index.pug -d docs --public-url ./"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/QumiQumi/2-zadanie-rizzoma.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/QumiQumi/2-zadanie-rizzoma/issues"
+    },
+    "homepage": "https://github.com/QumiQumi/2-zadanie-rizzoma#readme",
+    "devDependencies": {
+        "cssnano": "^4.1.10",
+        "pug": "^2.0.4",
+        "sass": "^1.25.0"
+    }
+}

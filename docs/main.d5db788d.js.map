@@ -1,0 +1,16 @@
+{
+    "version": 3,
+    "sources": [
+        "main.js"
+    ],
+    "names": [
+        "console",
+        "log"
+    ],
+    "mappings": ";;;AACA,aADA,QAAA,eACAA,QAAQC,IAAI",
+    "file": "main.d5db788d.js",
+    "sourceRoot": "..\\src",
+    "sourcesContent": [
+        "import './main.scss';\r\nconsole.log('Hello main.js!')"
+    ]
+}
