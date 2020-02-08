@@ -1,5 +1,11 @@
+input {
+  width: 320px;
+  height: 44px;
+  border-radius: 4;
+}
+
 h1 {
-  color: tomato;
+  color: blue;
 }
 
 /*# sourceMappingURL=/main.1f19ae8e.css.map */

@@ -1,4 +1,6 @@
-$color_h1: tomato;
+@import 'common.blocks/variables/colors.scss';
+@import 'common.blocks/input/input.scss';
+$color_h1: blue;
 h1 {
     color: $color_h1;
 }
