@@ -194,7 +194,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"C:/Users/gleby/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"main.js":[function(require,module,exports) {
+},{"./fonts\\Quicksand\\Quicksand-Bold.svg":[["Quicksand-Bold.01d21a48.svg","fonts/Quicksand/Quicksand-Bold.svg"],"fonts/Quicksand/Quicksand-Bold.svg"],"./fonts\\Quicksand\\Quicksand-Bold.woff":[["Quicksand-Bold.1ad35feb.woff","fonts/Quicksand/Quicksand-Bold.woff"],"fonts/Quicksand/Quicksand-Bold.woff"],"./fonts\\Quicksand\\Quicksand-Bold.ttf":[["Quicksand-Bold.b48bd0f5.ttf","fonts/Quicksand/Quicksand-Bold.ttf"],"fonts/Quicksand/Quicksand-Bold.ttf"],"./fonts\\Montserrat\\Montserrat-Regular.svg":[["Montserrat-Regular.4e28c498.svg","fonts/Montserrat/Montserrat-Regular.svg"],"fonts/Montserrat/Montserrat-Regular.svg"],"./fonts\\Montserrat\\Montserrat-Regular.woff":[["Montserrat-Regular.f0ef367f.woff","fonts/Montserrat/Montserrat-Regular.woff"],"fonts/Montserrat/Montserrat-Regular.woff"],"./fonts\\Montserrat\\Montserrat-Regular.ttf":[["Montserrat-Regular.104dc861.ttf","fonts/Montserrat/Montserrat-Regular.ttf"],"fonts/Montserrat/Montserrat-Regular.ttf"],"_css_loader":"C:/Users/gleby/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"main.js":[function(require,module,exports) {
 "use strict";
 
 require("./common.blocks/variables/colors.scss");
@@ -230,7 +230,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64912" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52078" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

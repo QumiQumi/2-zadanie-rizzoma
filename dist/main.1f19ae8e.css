@@ -1,11 +1,56 @@
-input {
+@font-face {
+  font-family: "Quicksand";
+  src: url("/Quicksand-Bold.01d21a48.svg");
+  src: url("/Quicksand-Bold.1ad35feb.woff");
+  src: url("/Quicksand-Bold.b48bd0f5.ttf");
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/Montserrat-Regular.4e28c498.svg");
+  src: url("/Montserrat-Regular.f0ef367f.woff");
+  src: url("/Montserrat-Regular.104dc861.ttf");
+}
+.input {
   width: 320px;
   height: 44px;
-  border-radius: 4;
+  border-radius: 4px;
 }
 
 h1 {
-  color: blue;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+  color: #1F2041;
+}
+
+h2 {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  color: #1F2041;
+}
+
+h3 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  color: #1F2041;
+  text-transform: uppercase;
+}
+
+body {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
 }
 
 /*# sourceMappingURL=/main.1f19ae8e.css.map */
