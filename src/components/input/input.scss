@@ -1,0 +1,25 @@
+.input {
+    width: 320px;
+    height: 44px;
+    border-radius: 4px;
+    border: 1px solid $dark-shade-25;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    outline: none;
+    padding-left: 15px;
+    color: $dark-shade-25;
+}
+
+.input:focus {
+    border: 1px solid $dark-shade-50;
+    color: $dark-shade-75;
+}
+
+.input:hover {
+    border: 1px solid $dark-shade-50;
+    color: $dark-shade-75;
+}
+
+.input::placeholder {
+    color: $dark-shade-25;
+}

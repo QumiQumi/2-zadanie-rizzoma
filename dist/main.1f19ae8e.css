@@ -1,5 +1,76 @@
+@font-face {
+  font-family: "Quicksand";
+  src: url("/Quicksand-Bold.d88f79ae.svg");
+  src: url("/Quicksand-Bold.cebade9a.woff");
+  src: url("/Quicksand-Bold.0eff98ac.ttf");
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/Montserrat-Regular.7bf9c1d3.svg");
+  src: url("/Montserrat-Regular.a387b883.woff");
+  src: url("/Montserrat-Regular.bc58cfac.ttf");
+}
+.input {
+  width: 320px;
+  height: 44px;
+  border-radius: 4px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  background: #FFFFFF;
+  box-sizing: border-box;
+  outline: none;
+  padding-left: 15px;
+  color: rgba(31, 32, 65, 0.25);
+}
+
+.input:focus {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.input:hover {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.input::placeholder {
+  color: rgba(31, 32, 65, 0.25);
+}
+
 h1 {
-  color: tomato;
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+  color: #1F2041;
+}
+
+h2 {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  color: #1F2041;
+}
+
+h3 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  color: #1F2041;
+  text-transform: uppercase;
+}
+
+body {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
 }
 
 /*# sourceMappingURL=/main.1f19ae8e.css.map */

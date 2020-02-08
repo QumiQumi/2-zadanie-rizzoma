@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"C:/Users/gleby/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"main.js":[function(require,module,exports) {
+},{"./components\\fonts\\Quicksand\\Quicksand-Bold.svg":[["Quicksand-Bold.d88f79ae.svg","components/fonts/Quicksand/Quicksand-Bold.svg"],"components/fonts/Quicksand/Quicksand-Bold.svg"],"./components\\fonts\\Quicksand\\Quicksand-Bold.woff":[["Quicksand-Bold.cebade9a.woff","components/fonts/Quicksand/Quicksand-Bold.woff"],"components/fonts/Quicksand/Quicksand-Bold.woff"],"./components\\fonts\\Quicksand\\Quicksand-Bold.ttf":[["Quicksand-Bold.0eff98ac.ttf","components/fonts/Quicksand/Quicksand-Bold.ttf"],"components/fonts/Quicksand/Quicksand-Bold.ttf"],"./components\\fonts\\Montserrat\\Montserrat-Regular.svg":[["Montserrat-Regular.7bf9c1d3.svg","components/fonts/Montserrat/Montserrat-Regular.svg"],"components/fonts/Montserrat/Montserrat-Regular.svg"],"./components\\fonts\\Montserrat\\Montserrat-Regular.woff":[["Montserrat-Regular.a387b883.woff","components/fonts/Montserrat/Montserrat-Regular.woff"],"components/fonts/Montserrat/Montserrat-Regular.woff"],"./components\\fonts\\Montserrat\\Montserrat-Regular.ttf":[["Montserrat-Regular.bc58cfac.ttf","components/fonts/Montserrat/Montserrat-Regular.ttf"],"components/fonts/Montserrat/Montserrat-Regular.ttf"],"_css_loader":"C:/Users/gleby/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"main.js":[function(require,module,exports) {
 "use strict";
 
 require("./main.scss");
@@ -223,7 +223,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49758" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53993" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
