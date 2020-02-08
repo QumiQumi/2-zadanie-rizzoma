@@ -1,3 +1,4 @@
+include ./components/input/input
 <!DOCTYPE html>
 html(lang="en")
     head
@@ -5,12 +6,15 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title Document
-        include common.blocks/input/input
+        
     body
-        h1 This one is the sub-section or widget title
-        h2 Next one is the item title inside widgets
-        h3 This is a label or CTA text
-        |This is the body text which is used for most of the design, like paragraphs, lists, etc.
-        +input()
+        div
+            h1 This one is the sub-section or widget title
+            h2 Next one is the item title inside widgets
+            h3 This is a label or CTA text
+            |This is the body text which is used for most of the design, like paragraphs, lists, etc.
+        +input({placeholder:"Email"})
+        +input({value:"This is pretty awesome"})
     foot
         script(src='./main.js')
+        

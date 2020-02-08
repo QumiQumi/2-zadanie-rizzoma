@@ -1,19 +1,39 @@
 @font-face {
   font-family: "Quicksand";
-  src: url("/Quicksand-Bold.01d21a48.svg");
-  src: url("/Quicksand-Bold.1ad35feb.woff");
-  src: url("/Quicksand-Bold.b48bd0f5.ttf");
+  src: url("/Quicksand-Bold.d88f79ae.svg");
+  src: url("/Quicksand-Bold.cebade9a.woff");
+  src: url("/Quicksand-Bold.0eff98ac.ttf");
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("/Montserrat-Regular.4e28c498.svg");
-  src: url("/Montserrat-Regular.f0ef367f.woff");
-  src: url("/Montserrat-Regular.104dc861.ttf");
+  src: url("/Montserrat-Regular.7bf9c1d3.svg");
+  src: url("/Montserrat-Regular.a387b883.woff");
+  src: url("/Montserrat-Regular.bc58cfac.ttf");
 }
 .input {
   width: 320px;
   height: 44px;
   border-radius: 4px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  background: #FFFFFF;
+  box-sizing: border-box;
+  outline: none;
+  padding-left: 15px;
+  color: rgba(31, 32, 65, 0.25);
+}
+
+.input:focus {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.input:hover {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.input::placeholder {
+  color: rgba(31, 32, 65, 0.25);
 }
 
 h1 {
