@@ -1,4 +1,9 @@
 .dropdown {
+    position: absolute;
+    //text-align: center;
+}
+
+.dropdown select {
     width: 320px;
     height: 44px;
     border-radius: 4px;
@@ -8,4 +13,28 @@
     outline: none;
     padding-left: 15px;
     color: $dark-shade-75;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.dropdown::after {
+    content: "keyboard_arrow_down";
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    font-size: 24px;
+    line-height: 24px;
+    width: 44px;
+}
+
+.dropdown:focus {
+    background-color: black;
 }

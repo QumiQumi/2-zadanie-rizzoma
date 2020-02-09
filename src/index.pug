@@ -1,5 +1,7 @@
 include ./components/text-field/text-field
 include ./components/dropdown/dropdown
+
+
 <!DOCTYPE html>
 html(lang="en")
     head
@@ -7,6 +9,7 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title Document
+        script(src = "http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js")
         
     body
         div
@@ -18,7 +21,7 @@ html(lang="en")
         +text-field({value:"This is pretty awesome"})
         -
             var items= [
-                {value:"car", text:"Octan"},
+                {value:"car", text:"Сколько гостей"},
                 {value:"car", text:"Dominus"},
                 {value:"shit", text:"Gizmo"}
             ]
