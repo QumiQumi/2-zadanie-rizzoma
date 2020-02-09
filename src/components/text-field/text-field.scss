@@ -1,4 +1,4 @@
-.input {
+.text-field {
     width: 320px;
     height: 44px;
     border-radius: 4px;
@@ -10,16 +10,16 @@
     color: $dark-shade-25;
 }
 
-.input:focus {
+.text-field:focus {
     border: 1px solid $dark-shade-50;
     color: $dark-shade-75;
 }
 
-.input:hover {
+.text-field:hover {
     border: 1px solid $dark-shade-50;
     color: $dark-shade-75;
 }
 
-.input::placeholder {
+.text-field::placeholder {
     color: $dark-shade-25;
 }

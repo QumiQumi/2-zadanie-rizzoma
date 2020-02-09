@@ -1,0 +1,4 @@
+mixin dropdown(options="")
+    select.dropdown
+        each item in options.items
+            option(value=item.value) #{item.text}

@@ -1,4 +1,5 @@
-include ./components/input/input
+include ./components/text-field/text-field
+include ./components/dropdown/dropdown
 <!DOCTYPE html>
 html(lang="en")
     head
@@ -13,8 +14,15 @@ html(lang="en")
             h2 Next one is the item title inside widgets
             h3 This is a label or CTA text
             |This is the body text which is used for most of the design, like paragraphs, lists, etc.
-        +input({placeholder:"Email"})
-        +input({value:"This is pretty awesome"})
+        +text-field({placeholder:"Email"})
+        +text-field({value:"This is pretty awesome"})
+        -
+            var items= [
+                {value:"car", text:"Octan"},
+                {value:"car", text:"Dominus"},
+                {value:"shit", text:"Gizmo"}
+            ]
+        +dropdown({items}) 
     foot
         script(src='./main.js')
         
