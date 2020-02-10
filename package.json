@@ -23,5 +23,11 @@
         "cssnano": "^4.1.10",
         "pug": "^2.0.4",
         "sass": "^1.25.0"
+    },
+    "dependencies": {
+        "bootstrap": "^4.4.1",
+        "jquery": "^3.4.1",
+        "popper": "^1.0.1",
+        "util": "^0.12.1"
     }
 }

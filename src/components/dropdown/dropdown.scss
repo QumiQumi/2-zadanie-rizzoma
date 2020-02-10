@@ -16,6 +16,7 @@
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+    background-color: transparent;
 }
 
 .dropdown::after {
@@ -33,4 +34,5 @@
     font-size: 24px;
     line-height: 24px;
     width: 44px;
+    z-index: -1;
 }
