@@ -1,6 +1,5 @@
 mixin dropdown(options="")
-    label
-        .dropdown
-            select
-                each item in options.items
-                    option(value=item.value) #{item.text}
+    .dropdown
+        select
+            each item in options.items
+                option(value=item.value) #{item.text}
