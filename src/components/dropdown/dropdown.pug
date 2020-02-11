@@ -1,5 +1,6 @@
 mixin dropdown(options="")
     .dropdown
-        select
+        .dropdown__name Сколько
+        .dropdown-list
             each item in options.items
-                option(value=item.value) #{item.text}
+                div(value=item.value).dropdown-list__item #{item.text}

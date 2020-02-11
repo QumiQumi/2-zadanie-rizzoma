@@ -1,22 +1,25 @@
 .dropdown {
     position: absolute;
-    //text-align: center;
-}
-
-.dropdown select {
     width: 320px;
     height: 44px;
-    border-radius: 4px;
-    border: 1px solid $dark-shade-25;
     background: #FFFFFF;
     box-sizing: border-box;
-    outline: none;
-    padding-left: 15px;
+    //outline: none;
     color: $dark-shade-75;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     background-color: transparent;
+}
+
+.dropdown__name {
+    border: 1px solid $dark-shade-25;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 15px;
+    width: 320px;
+    height: 44px;
+    box-sizing: border-box;
 }
 
 .dropdown::after {
@@ -35,4 +38,31 @@
     line-height: 24px;
     width: 44px;
     z-index: -1;
+}
+
+.absolute .dropdown-list {
+    position: absolute;
+    top: 44px;
+    background: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.dropdown-list {
+    display: block; //display: none;
+    border: 1px solid $dark-shade-25;
+    border-top: none;
+    //box-sizing: border-box;
+    border-radius: 0 0 4px 4px;
+}
+
+.dropdown-list div {
+    padding-top: 13px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+
+.dropdown.active .dropdown-list {
+    display: block;
 }
