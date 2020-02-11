@@ -1,12 +1,5 @@
 mixin dropdown(options="")
-    //- .dropdown
-    //-     select
-    //-         each item in options.items
-    //-             option(value=item.value) #{item.text}
     .dropdown
-            #dropdownMenuButton.dropdown-toggle(type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-                | Dropdown button
-            .dropdown-menu(aria-labelledby='dropdownMenuButton')
-                .dropdown-item(href='#') Action
-                .dropdown-item(href='#') Another action
-                .dropdown-item(href='#') Something else here    
+        select
+            each item in options.items
+                option(value=item.value) #{item.text}

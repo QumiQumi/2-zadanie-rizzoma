@@ -25,9 +25,11 @@
         "sass": "^1.25.0"
     },
     "dependencies": {
-        "bootstrap": "^4.4.1",
+        "assemble": "^0.3.83",
+        "grunt": "^0.4.5",
+        "item-quantity-dropdown": "^2.0.2",
         "jquery": "^3.4.1",
-        "popper": "^1.0.1",
-        "util": "^0.12.1"
+        "jquery-ui": "^1.12.1",
+        "styles": "^0.2.1"
     }
 }

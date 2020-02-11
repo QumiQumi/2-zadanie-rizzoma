@@ -1,9 +1,5 @@
-@import './theme/variables/colors.scss';
-@import './theme/fonts/fonts.scss';
-@import './components/text-field/text-field.scss';
-//@import './components/drop-down/drop-down.scss';
-//@import './components/dropdown/dropdown.scss';
-//@import '../node_modules/item-quantity-dropdown/lib/item-quantity-dropdown.min.css';
+@import './variables/colors.scss';
+@import './fonts/fonts.scss';
 h1 {
     font-family: 'Quicksand';
     font-style: normal;

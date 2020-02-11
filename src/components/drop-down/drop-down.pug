@@ -1,0 +1,23 @@
+//-
+  options.items - массив элементов выпадающего списка
+  options.items[0].name - название элемента
+  options.items[0].value - value элемента
+  options.name - form element name
+  options.tabindex - input tabindex
+  options.required - input required
+
+mixin drop-down(options)
+  if !options
+    - options = {}
+
+  label.drop-down.js-drop-down
+    select.drop-down__select-box.js-drop-down__select-box(
+      name = options.name
+      tabindex = options.tabindex
+      required = options.required
+    )
+      if options.items
+        each item in options.items
+          option.drop-down__item(
+            value = item.name
+          ) #{item.value || item.name}
