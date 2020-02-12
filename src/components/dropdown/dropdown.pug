@@ -1,6 +1,19 @@
+//- options:
+    var items= [
+                {value:"car", text:"Сколько гостей"},
+                {value:"car", text:"Dominus"},
+                {value:"shit", text:"Gizmo"}
+            ]
 mixin dropdown(options="")
     .dropdown
         .dropdown__name Сколько
         .dropdown-list
             each item in options.items
-                div(value=item.value).dropdown-list__item #{item.text}
+                div(value=item.value).dropdown-list__item
+                    h3 #{item.text}
+                .dropdown-list__switcher
+                    .dropdown-list__switcher_circle -
+                    .dropdown-list__switcher_number 
+                        h3 0
+                    .dropdown-list__switcher_circle +
+                    

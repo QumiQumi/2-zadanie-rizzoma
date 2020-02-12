@@ -3,7 +3,7 @@
 console.log('dropdown');
 
 document.addEventListener('DOMContentLoaded', function() {
-    drop = document.getElementsByClassName('dropdown__name');
+    drop = document.getElementsByClassName('dropdown');
     let i = 0;
     while (i < drop.length) {
         drop[i].addEventListener('click', function() {
@@ -11,4 +11,5 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         i++;
     }
+
 })

@@ -52,49 +52,69 @@
 }
 
 .dropdown-list {
-    //display: block;
-    display: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     border: 1px solid $dark-shade-25;
     border-top: none;
     //box-sizing: border-box;
     border-radius: 0 0 4px 4px;
+    padding-top: 0px;
+    display: none;
 }
 
 .dropdown-list div {
-    padding-top: 13px;
+    padding-top: 12px;
     padding-bottom: 10px;
     padding-left: 15px;
 }
 
-.dropdown.active .dropdown-list {
-    display: block;
+.dropdown-list__item {
+    width: 200px;
+    background-color: #fff;
+    box-sizing: border-box;
 }
 
-// .dropdown {
-//     position: relative;
-//     max-width: 320px;
-//     margin: 10px 0;
-// }
-// .dropdown div {
-//     padding: 10px;
-// }
-// .absolute .dropdown-list {
-//     position: absolute;
-//     top: 40px;
-//     background: #fff;
-//     width: 100%;
-//     box-sizing: border-box;
-//     z-index: 1;
-// }
-// .dropdown__name {
-//     border: 1px solid black;
-//     cursor: pointer;
-// }
-// .dropdown-list {
-//     display: none;
-//     border: 1px solid black;
-//     border-top: none;
-// }
-// .dropdown.active .dropdown-list {
-//     display: block;
-// }
+.dropdown-list__switcher {
+    background-color: #fff;
+    width: 100px;
+    height: 100%;
+    padding: 0px;
+    margin-right: 7px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px !important;
+}
+
+.dropdown-list__switcher_circle {
+    font-family: 'Montserrat';
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 22px;
+    border: 1px solid $dark-shade-25;
+    border-radius: 22px;
+    width: 30px;
+    height: 30px;
+    padding: 0px !important;
+}
+
+.dropdown-list__switcher_number {
+    font-family: 'Montserrat';
+    font-weight: normal;
+    font-style: normal;
+    align-items: center;
+    justify-content: center;
+    // width: 30px;
+    // height: 30px;
+    padding: 0px !important;
+}
+
+.dropdown.active .dropdown-list {
+    display: flex;
+}
