@@ -25,9 +25,9 @@
         "sass": "^1.25.0"
     },
     "dependencies": {
-        "assemble": "^0.3.83",
+        "assemble": "^0.24.3",
         "grunt": "^0.4.5",
-        "item-quantity-dropdown": "^2.0.2",
+        "item-quantity-dropdown": "^2.1.0",
         "jquery": "^3.4.1",
         "jquery-ui": "^1.12.1",
         "styles": "^0.2.1"

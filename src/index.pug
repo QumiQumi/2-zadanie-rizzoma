@@ -1,6 +1,8 @@
 include ./components/text-field/text-field
 include ./components/dropdown/dropdown
+//- include ./components/dropdown/item-quantity-dropdown
 //- include ./components/drop-down/drop-down
+
 
 <!DOCTYPE html>
 html(lang="en")
@@ -27,7 +29,14 @@ html(lang="en")
                 {value:"shit", text:"Gizmo"}
             ]
         +dropdown({items})
+        -
+            var items= [
+                {value:"car", text:"Сколько гостей"},
+                {value:"car", text:"Dominus"}
+            ]
         +dropdown({items})
+
+
 
     foot
         
