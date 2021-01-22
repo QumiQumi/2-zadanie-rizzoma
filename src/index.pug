@@ -1,43 +1,39 @@
 include ./components/text-field/text-field
 include ./components/dropdown/dropdown
-//- include ./components/dropdown/item-quantity-dropdown
 //- include ./components/drop-down/drop-down
 
 
 <!DOCTYPE html>
 html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title Document
-        script(src='./main.js')
-        
-    body
-        div
-            h1 This one is the sub-section or widget title
-            h2 Next one is the item title inside widgets
-            h3 This is a label or CTA text
-            |This is the body text which is used for most of the design, like paragraphs, lists, etc.
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		title Document
+		script(src='./main.js')
+		
+	body
+		div
+			h1 This one is the sub-section or widget title
+			h2 Next one is the item title inside widgets
+			h3 This is a label or CTA text
+			|This is the body text which is used for most of the design, like paragraphs, lists, etc.
 
-        +text-field({placeholder:"Email"})
-        +text-field({value:"This is pretty awesome"})
-        -
-            var items= [
-                {value:"car", text:"Сколько гостей"},
-                {value:"car", text:"Dominus"},
-                {value:"shit", text:"Gizmo"}
-            ]
-        +dropdown({items})
-        -
-            var items= [
-                {value:"car", text:"Сколько гостей"},
-                {value:"car", text:"Dominus"}
-            ]
-        +dropdown({items})
+		+text-field({placeholder:"Email"})
+		+text-field({value:"This is pretty awesome"})
+
+		-
+			var items= [
+				{value:"1", text:"Взрослые", minItems:1, maxItems:5},
+				{value:"2", text:"Дети", minItems:0, maxItems:6},
+				{value:"3", text:"Младенцы", minItems:0},
+			]
+		+dropdown({items, multiple:true})
+		+dropdown({items})
 
 
 
-    foot
-        
-        
+
+	
+		
+		

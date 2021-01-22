@@ -11292,72 +11292,175 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var _default = window.$ = window.jQuery = _jquery.default;
 
 exports.default = _default;
-},{"jquery":"../node_modules/jquery/dist/jquery.js"}],"components/text-field/text-field.js":[function(require,module,exports) {
-//import './text-field.scss';
-},{}],"components/dropdown/dropdown.js":[function(require,module,exports) {
-//import './dropdown.scss';
-console.log("dropdown");
-document.addEventListener("DOMContentLoaded", function () {
-  drop = $(".dropdown"); //document.getElementsByClassName('dropdown');
+},{"jquery":"../node_modules/jquery/dist/jquery.js"}],"components/text-field/text-field.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
 
-  var i = 0;
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"C:/Users/gleb/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/text-field/text-field.js":[function(require,module,exports) {
+"use strict";
 
-  while (i < drop.length) {
-    //на дропдаун
-    drop[i].addEventListener("click", function () {
-      event.target.closest(".dropdown").classList.toggle("active");
-    }); //на плюсы и минусы
+require("./text-field.scss");
+},{"./text-field.scss":"components/text-field/text-field.scss"}],"components/dropdown/dropdown.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
 
-    switchArr = drop[i].querySelectorAll(".dropdown-list__switcher");
-    switchCount = 0;
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"C:/Users/gleb/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/dropdown/dropdown.js":[function(require,module,exports) {
+"use strict";
 
-    while (switchCount < switchArr.length) {
-      switchElem = switchArr[switchCount];
-      minus = switchElem.querySelectorAll(".dropdown-list__switcher_circle")[0];
-      plus = switchElem.querySelectorAll(".dropdown-list__switcher_circle")[1];
-      number = switchElem.querySelector(".dropdown-list__switcher_number");
-      minus.addEventListener("click", function () {
-        number = event.target.closest(".dropdown-list__switcher").querySelector(".dropdown-list__switcher_number").querySelector("h3");
+require("./dropdown.scss");
 
-        if (number.textContent > 0) {
-          number.textContent--;
+(function ($) {
+  $.fn.dropdown = function (options) {
+    var defaults = {
+      maxItems: Infinity,
+      minItems: 0,
+      items: {},
+      multiple: false
+    };
+    this.each(function () {
+      var settings = $.extend({}, defaults, options);
+      var $this = $(this);
+      var $name = $this.find(".dropdown__name");
+      var $nameAfter = $this.find(".dropdown__name:after");
+      var $list = $this.find(".dropdown__list");
+      var $clearBtn = $this.find(".dropdown__clear");
+      var $applyBtn = $this.find(".dropdown__apply");
+      var $items = $this.find(".dropdown__item").map(function () {
+        return {
+          item: $(this),
+          value: $(this).attr("value"),
+          text: $(this).find(">span").text(),
+          sum: $(this).attr("minItems"),
+          minItems: $(this).attr("minItems"),
+          maxItems: $(this).attr("maxItems")
+        };
+      });
+      var minSum = 0;
+      $items.each(function () {
+        if (this.sum) minSum += parseInt(this.sum);
+      });
+      var totalSum = 0;
+      var multiple = $this.attr("multiple") ? true : settings.multiple;
+      var isHidden = true; // Обработка нажатия на дропдаун
+
+      $name.on("click", function () {
+        toggleDropdown();
+      }); // Обработка кнопки применить
+
+      $applyBtn.on("click", function () {
+        toggleDropdown();
+      });
+
+      function toggleDropdown() {
+        $list.toggleClass("show");
+        var afterContentText = isHidden ? "keyboard_arrow_up" : "keyboard_arrow_down";
+        $name.attr("data-after", afterContentText);
+        isHidden = !isHidden;
+      } // Обработка кнопки очистки
+
+
+      $clearBtn.on("click", function () {
+        totalSum = minSum;
+        toggleClearBtn();
+        $items.each(function () {
+          this.sum = $(this).attr("minItems");
+          this.item.find(".dropdown__number span").text(this.sum);
+          this.item.find(".dropdown__minus").css("opacity", 0.5);
+        });
+        updateTextfield();
+      });
+      $items.each(function () {
+        var item = this;
+        var $item = this.item;
+        var $minus = $item.find(".dropdown__minus");
+        var $plus = $item.find(".dropdown__plus");
+        var $number = $item.find(".dropdown__number span");
+        var minItems = Number(item.minItems ? item.minItems : settings.minItems);
+        var maxItems = Number(item.maxItems ? item.maxItems : settings.maxItems);
+        setItem(); // Обработка кнопки плюс
+
+        $plus.on("click", function () {
+          if (item.sum < maxItems) {
+            if (item.sum == minItems) $minus.css("opacity", 1);
+            updateSum("plus");
+          }
+        }); // Обработка кнопки минус
+
+        $minus.on("click", function () {
+          if (item.sum > minItems) {
+            if (item.sum == minItems + 1) $(this).css("opacity", 0.5);
+            updateSum("minus");
+          }
+        });
+
+        function updateSum(operation) {
+          switch (operation) {
+            case "minus":
+              {
+                item.sum--;
+                totalSum--;
+                break;
+              }
+
+            case "plus":
+              {
+                item.sum++;
+                totalSum++;
+                break;
+              }
+          }
+
+          $number.text(item.sum);
+          toggleClearBtn();
+          updateTextfield();
         }
 
-        console.log(checkSum(event));
-        if (checkSum(event) == 0) clearBtnInactive();
-        event.stopPropagation();
-      });
-      plus.addEventListener("click", function () {
-        number = event.target.closest(".dropdown-list__switcher").querySelector(".dropdown-list__switcher_number").querySelector("h3");
-
-        if (number.textContent < 9) {
-          number.textContent++;
+        function setItem() {
+          $number.text(minItems);
+          totalSum += minItems;
         }
 
-        if (checkSum(event) == 0) clearBtnInactive();
-        event.stopPropagation();
+        updateTextfield();
       });
-      switchCount++;
-    }
 
-    console.log(switchArr);
-    i++;
-  }
-});
+      function toggleClearBtn() {
+        if (totalSum === minSum) {
+          $clearBtn.css("visibility", "hidden");
+        } else {
+          $clearBtn.css("visibility", "visible");
+        }
+      }
 
-function checkSum(event) {
-  sum = 0;
-  numbers = event.target.closest(".dropdown-list").querySelectorAll(".dropdown-list__switcher_number");
-  numbers.forEach(function (element) {
-    sum += element.textContent;
+      function updateTextfield() {
+        if (multiple) {
+          var text = "";
+          var isFirst = true;
+          $items.each(function () {
+            if (this.sum != 0) if (isFirst) {
+              text += "".concat(this.sum, " ").concat(this.text);
+              isFirst = false;
+            } else text += ", ".concat(this.sum, " ").concat(this.text);
+          });
+          $name.text(text);
+        } else {
+          var _text = "гость";
+          if (totalSum > 1 && totalSum < 5) _text = "гостя";else if (totalSum >= 5 && totalSum < 21) _text = "гостeй";
+          if (totalSum === 0) $name.text("Сколько гостей");else $name.text("".concat(totalSum, " ").concat(_text));
+        }
+      }
+    });
+    return this;
+  };
+})(jQuery);
+
+$(function () {
+  $(".dropdown").dropdown({
+    maxItems: 5
   });
-  return sum;
-}
-
-function clearBtnInactive(event) {
-  dropdown = event.target.closest(".dropdown-list").querySelector(".dropdown-list__toolbar_clear"); // dropdown.classList.add("inactive");
-}
-},{}],"main.js":[function(require,module,exports) {
+});
+},{"./dropdown.scss":"components/dropdown/dropdown.scss"}],"main.js":[function(require,module,exports) {
 "use strict";
 
 require("./main.scss");
@@ -11367,9 +11470,6 @@ require("./jquery-glob");
 require("./components/text-field/text-field");
 
 require("./components/dropdown/dropdown");
-
-// import "./components/i-q-dropdown/i-q-dropdown";
-console.log("Hello main.js!");
 },{"./main.scss":"main.scss","./jquery-glob":"jquery-glob.js","./components/text-field/text-field":"components/text-field/text-field.js","./components/dropdown/dropdown":"components/dropdown/dropdown.js"}],"C:/Users/gleb/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -11398,7 +11498,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65500" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55125" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -1,25 +1,25 @@
 //- options:
-    var items= [
-                {value:"car", text:"Сколько гостей"},
-                {value:"car", text:"Dominus"},
-                {value:"shit", text:"Gizmo"}
-            ]
+	var items= [
+				{value:"car", text:"Сколько гостей"},
+				{value:"car", text:"Dominus"},
+				{value:"shit", text:"Gizmo"}
+			]
 mixin dropdown(options="")
-    .dropdown
-        .dropdown__name Сколько
-        .dropdown-list
-            each item in options.items
-                div(value=item.value).dropdown-list__item
-                    h3 #{item.text}
-                .dropdown-list__switcher
-                    .dropdown-list__switcher_circle -
-                    .dropdown-list__switcher_number 
-                        h3 0
-                    .dropdown-list__switcher_circle +
-            .dropdown-list__toolbar
-                .dropdown-list__toolbar_clear
-                    h3 Очистить
-                .dropdown-list__toolbar_apply 
-                    h3 Применить
+	.dropdown(multiple=options.multiple)
+		.dropdown__name(data-after="keyboard_arrow_down") Сколько гостей
+		.dropdown__list
+			each item in options.items
+				div(value=item.value, minItems=item.minItems, maxItems=item.maxItems).dropdown__item
+					span #{item.text}
+					.dropdown__switcher
+						.dropdown__minus -
+						.dropdown__number 
+							span 0
+						.dropdown__plus +
+			.dropdown__toolbar
+				.dropdown__clear
+					h3 Очистить
+				.dropdown__apply 
+					h3 Применить
 
-                    
+					

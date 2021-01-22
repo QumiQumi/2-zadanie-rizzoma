@@ -1,14 +1,7 @@
-@import './theme/variables/colors.scss';
-@import './theme/fonts/fonts.scss';
-@import './components/text-field/text-field.scss';
-@import './components/dropdown/dropdown.scss';
-// @import "./components/i-q-dropdown/styles/main.scss";
-
-
-//@import './components/drop-down/drop-down.scss';
-//@import '../node_modules/item-quantity-dropdown/lib/item-quantity-dropdown.min.css';
+@import "./theme/variables/colors.scss";
+@import "./theme/fonts/fonts.scss";
 h1 {
-    font-family: 'Quicksand';
+    font-family: "Quicksand";
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -17,7 +10,7 @@ h1 {
 }
 
 h2 {
-    font-family: 'Quicksand';
+    font-family: "Quicksand";
     font-style: normal;
     font-weight: bold;
     font-size: 19px;
@@ -26,7 +19,7 @@ h2 {
 }
 
 h3 {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 900;
     font-size: 12px;
@@ -37,10 +30,11 @@ h3 {
 }
 
 body {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 24px;
     color: $dark-shade-75;
+    display: flex;
 }
