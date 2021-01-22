@@ -22,14 +22,21 @@ html(lang="en")
 		+text-field({placeholder:"Email"})
 		+text-field({value:"This is pretty awesome"})
 
-		-
+		-	
 			var items= [
 				{value:"1", text:"Взрослые", minItems:1, maxItems:5},
 				{value:"2", text:"Дети", minItems:0, maxItems:6},
 				{value:"3", text:"Младенцы", minItems:0},
 			]
-		+dropdown({items, multiple:true})
+
 		+dropdown({items})
+		-	
+			var items= [
+				{value:"1", text:"Спальни", minItems:1, maxItems:5},
+				{value:"2", text:"Кровати", minItems:1, maxItems:10},
+				{value:"3", text:"Ванные комнаты", minItems:3},
+			]
+		+dropdown({items, multiple:true})
 
 
 

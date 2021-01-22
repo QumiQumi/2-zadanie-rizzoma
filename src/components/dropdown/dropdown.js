@@ -12,8 +12,7 @@ import "./dropdown.scss";
             const settings = $.extend({}, defaults, options);
 
             const $this = $(this);
-            const $name = $this.find(".dropdown__name");
-            const $nameAfter = $this.find(".dropdown__name:after");
+            const $name = $this.find(".dropdown__text");
             const $list = $this.find(".dropdown__list");
             const $clearBtn = $this.find(".dropdown__clear");
             const $applyBtn = $this.find(".dropdown__apply");

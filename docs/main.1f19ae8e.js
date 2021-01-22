@@ -11322,8 +11322,7 @@ require("./dropdown.scss");
     this.each(function () {
       var settings = $.extend({}, defaults, options);
       var $this = $(this);
-      var $name = $this.find(".dropdown__name");
-      var $nameAfter = $this.find(".dropdown__name:after");
+      var $name = $this.find(".dropdown__text");
       var $list = $this.find(".dropdown__list");
       var $clearBtn = $this.find(".dropdown__clear");
       var $applyBtn = $this.find(".dropdown__apply");
@@ -11498,7 +11497,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55125" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55726" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

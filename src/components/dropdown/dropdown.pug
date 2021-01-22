@@ -6,7 +6,7 @@
 			]
 mixin dropdown(options="")
 	.dropdown(multiple=options.multiple)
-		.dropdown__name(data-after="keyboard_arrow_down") Сколько гостей
+		.dropdown__text(data-after="keyboard_arrow_down") Сколько гостей
 		.dropdown__list
 			each item in options.items
 				div(value=item.value, minItems=item.minItems, maxItems=item.maxItems).dropdown__item

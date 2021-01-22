@@ -1,27 +1,30 @@
 @import "/theme/variables/colors.scss";
 .dropdown {
-    max-width: 320px;
+    width: 320px;
     position: relative;
     user-select: none;
 
-    &__name {
+    &__text {
         border: 1px solid $dark-shade-25;
-
         border-radius: 4px 4px 0 0;
-        display: flex;
-        align-items: center;
         cursor: pointer;
         padding-left: 15px;
-        width: 320px;
+        padding-right: 44px;
+        line-height: 44px;
         height: 44px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
         box-sizing: border-box;
+
         &::after {
             content: attr(data-after);
             font-family: "Material Icons";
             position: absolute;
             right: 0;
             font-size: 24px;
-            line-height: 24px;
+            line-height: 44px;
             text-align: center;
             width: 44px;
         }
