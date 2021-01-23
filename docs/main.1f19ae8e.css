@@ -16,7 +16,7 @@ h1 {
   font-weight: bold;
   font-size: 24px;
   line-height: 24px;
-  color: #1F2041;
+  color: #1f2041;
 }
 
 h2 {
@@ -25,7 +25,7 @@ h2 {
   font-weight: bold;
   font-size: 19px;
   line-height: 24px;
-  color: #1F2041;
+  color: #1f2041;
 }
 
 h3 {
@@ -34,7 +34,7 @@ h3 {
   font-weight: 900;
   font-size: 12px;
   line-height: 15px;
-  color: #1F2041;
+  color: #1f2041;
   text-transform: uppercase;
   margin: auto;
 }
@@ -47,31 +47,50 @@ body {
   line-height: 24px;
   color: rgba(31, 32, 65, 0.75);
 }
-.text-field {
-  display: block;
+.textfield {
+  display: flex;
+  align-items: center;
   width: 320px;
   height: 44px;
-  border-radius: 4px;
+  background: #ffffff;
   border: 1px solid rgba(31, 32, 65, 0.25);
-  background: #FFFFFF;
+  border-radius: 4px;
   box-sizing: border-box;
+  overflow: hidden;
+  line-height: 44px;
+}
+.textfield:focus, .textfield:hover {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+}
+.textfield input {
+  color: rgba(31, 32, 65, 0.25);
+  padding: 0 15px;
+  border: none;
   outline: none;
-  padding-left: 15px;
-  color: rgba(31, 32, 65, 0.25);
+  line-height: inherit;
+  width: 100%;
+  height: 100%;
 }
-
-.text-field:focus {
-  border: 1px solid rgba(31, 32, 65, 0.5);
+.textfield input:focus, .textfield input:hover {
   color: rgba(31, 32, 65, 0.75);
 }
-
-.text-field:hover {
-  border: 1px solid rgba(31, 32, 65, 0.5);
-  color: rgba(31, 32, 65, 0.75);
-}
-
-.text-field::placeholder {
+.textfield input::placeholder {
   color: rgba(31, 32, 65, 0.25);
+}
+.textfield__button {
+  display: none;
+  text-align: center;
+  width: 44px;
+  min-width: 44px;
+  height: 100%;
+  line-height: inherit;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+.textfield__button.show {
+  display: block;
 }
 .dropdown {
   position: relative;
@@ -131,7 +150,7 @@ body {
   font-size: 12px;
   line-height: 15px;
   text-transform: uppercase;
-  color: #1F2041;
+  color: #1f2041;
 }
 .dropdown__switcher {
   width: 92px;
@@ -182,7 +201,7 @@ body {
   color: rgba(31, 32, 65, 0.5);
 }
 .dropdown__apply h3 {
-  color: #BC9CFF;
+  color: #bc9cff;
 }
 
 /*# sourceMappingURL=/main.1f19ae8e.css.map */

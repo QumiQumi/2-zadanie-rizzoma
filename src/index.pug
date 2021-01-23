@@ -1,4 +1,4 @@
-include ./components/text-field/text-field
+include ./components/textfield/textfield
 include ./components/dropdown/dropdown
 //- include ./components/drop-down/drop-down
 
@@ -21,8 +21,9 @@ html(lang="en")
 			h3 This is a label or CTA text
 			|This is the body text which is used for most of the design, like paragraphs, lists, etc.
 
-		+text-field({placeholder:"Email"})
-		+text-field({value:"This is pretty awesome"})
+		+textfield({placeholder:"Email"})
+		+textfield({value:"This is pretty awesome"})
+		+textfield({placeholder:"Email", width:267, withButton:true})
 
 		-	
 			var items= [
