@@ -5,8 +5,10 @@
 				{value:"shit", text:"Gizmo"}
 			]
 mixin dropdown(options="")
-	.dropdown(multiple=options.multiple)
-		.dropdown__text(data-after="keyboard_arrow_down") Сколько гостей
+	.dropdown(multiple=options.multiple, width=options.width)
+		.dropdown__head
+			.dropdown__text(data-after="keyboard_arrow_down") Сколько гостей
+			i.dropdown__icon.material-icons keyboard_arrow_down
 		.dropdown__list
 			each item in options.items
 				div(value=item.value, minItems=item.minItems, maxItems=item.maxItems).dropdown__item

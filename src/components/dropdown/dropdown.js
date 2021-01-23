@@ -1,41 +1,34 @@
 import "./dropdown.scss";
 (function ($) {
     $.fn.dropdown = function (options) {
-        const defaults = {
+        let defaults = {
             maxItems: Infinity,
             minItems: 0,
             items: {},
             multiple: false,
+            width: 320,
         };
 
         this.each(function () {
-            const settings = $.extend({}, defaults, options);
+            let settings = $.extend({}, defaults, options);
 
             const $this = $(this);
-            const $name = $this.find(".dropdown__text");
+            const $head = $this.find(".dropdown__head");
+            const $text = $this.find(".dropdown__text");
+            const $icon = $this.find(".dropdown__icon");
             const $list = $this.find(".dropdown__list");
             const $clearBtn = $this.find(".dropdown__clear");
             const $applyBtn = $this.find(".dropdown__apply");
-            let $items = $this.find(".dropdown__item").map(function () {
-                return {
-                    item: $(this),
-                    value: $(this).attr("value"),
-                    text: $(this).find(">span").text(),
-                    sum: $(this).attr("minItems"),
-                    minItems: $(this).attr("minItems"),
-                    maxItems: $(this).attr("maxItems"),
-                };
-            });
+            let $items = null;
             let minSum = 0;
-            $items.each(function () {
-                if (this.sum) minSum += parseInt(this.sum);
-            });
             let totalSum = 0;
-            const multiple = $this.attr("multiple") ? true : settings.multiple;
             let isHidden = true;
+            const multiple = $this.attr("multiple") ? true : settings.multiple;
+
+            setVariables();
 
             // Обработка нажатия на дропдаун
-            $name.on("click", function () {
+            $head.on("click", function () {
                 toggleDropdown();
             });
 
@@ -43,13 +36,43 @@ import "./dropdown.scss";
             $applyBtn.on("click", function () {
                 toggleDropdown();
             });
+
+            function setVariables() {
+                $items = $this.find(".dropdown__item").map(function () {
+                    return {
+                        item: $(this),
+                        value: $(this).attr("value"),
+                        text: $(this).find(">span").text(),
+                        sum: $(this).attr("minItems"),
+                        minItems: $(this).attr("minItems"),
+                        maxItems: $(this).attr("maxItems"),
+                    };
+                });
+                $items.each(function () {
+                    if (this.sum) minSum += parseInt(this.sum);
+                });
+                let width = $this.attr("width")
+                    ? $this.attr("width")
+                    : settings.width;
+                $this.css("width", width);
+            }
             function toggleDropdown() {
                 $list.toggleClass("show");
                 let afterContentText = isHidden
                     ? "keyboard_arrow_up"
                     : "keyboard_arrow_down";
-                $name.attr("data-after", afterContentText);
+                $icon.text(afterContentText);
                 isHidden = !isHidden;
+            }
+            function hideDropdown() {
+                if (!isHidden) {
+                    $list.toggleClass("show");
+                    let afterContentText = isHidden
+                        ? "keyboard_arrow_up"
+                        : "keyboard_arrow_down";
+                    $icon.text(afterContentText);
+                    isHidden = !isHidden;
+                }
             }
             // Обработка кнопки очистки
             $clearBtn.on("click", function () {
@@ -137,14 +160,14 @@ import "./dropdown.scss";
                                 isFirst = false;
                             } else text += `, ${this.sum} ${this.text}`;
                     });
-                    $name.text(text);
+                    $text.text(text);
                 } else {
                     let text = "гость";
                     if (totalSum > 1 && totalSum < 5) text = "гостя";
                     else if (totalSum >= 5 && totalSum < 21) text = "гостeй";
 
-                    if (totalSum === 0) $name.text("Сколько гостей");
-                    else $name.text(`${totalSum} ${text}`);
+                    if (totalSum === 0) $text.text("Сколько гостей");
+                    else $text.text(`${totalSum} ${text}`);
                 }
             }
         });

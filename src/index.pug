@@ -11,6 +11,8 @@ html(lang="en")
 		meta(http-equiv="X-UA-Compatible", content="ie=edge")
 		title Document
 		script(src='./main.js')
+		link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+
 		
 	body
 		div
@@ -36,7 +38,9 @@ html(lang="en")
 				{value:"2", text:"Кровати", minItems:1, maxItems:10},
 				{value:"3", text:"Ванные комнаты", minItems:3},
 			]
-		+dropdown({items, multiple:true})
+		+dropdown({items, multiple:true, width:266})
+		+dropdown({items, multiple:true, width:"266px"})
+		+dropdown({items, multiple:true, width:543})
 
 
 

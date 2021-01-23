@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"E:\\Study\\FRONTEND\\FSD\\2-zadanie-fsd-parcel\\src\\theme\\fonts\\Quicksand\\Quicksand-Bold.svg":[["Quicksand-Bold.568e3ecc.svg","theme/fonts/Quicksand/Quicksand-Bold.svg"],"theme/fonts/Quicksand/Quicksand-Bold.svg"],"E:\\Study\\FRONTEND\\FSD\\2-zadanie-fsd-parcel\\src\\theme\\fonts\\Quicksand\\Quicksand-Bold.woff":[["Quicksand-Bold.44189749.woff","theme/fonts/Quicksand/Quicksand-Bold.woff"],"theme/fonts/Quicksand/Quicksand-Bold.woff"],"E:\\Study\\FRONTEND\\FSD\\2-zadanie-fsd-parcel\\src\\theme\\fonts\\Quicksand\\Quicksand-Bold.ttf":[["Quicksand-Bold.8a513087.ttf","theme/fonts/Quicksand/Quicksand-Bold.ttf"],"theme/fonts/Quicksand/Quicksand-Bold.ttf"],"E:\\Study\\FRONTEND\\FSD\\2-zadanie-fsd-parcel\\src\\theme\\fonts\\Montserrat\\Montserrat-Regular.svg":[["Montserrat-Regular.26be7165.svg","theme/fonts/Montserrat/Montserrat-Regular.svg"],"theme/fonts/Montserrat/Montserrat-Regular.svg"],"E:\\Study\\FRONTEND\\FSD\\2-zadanie-fsd-parcel\\src\\theme\\fonts\\Montserrat\\Montserrat-Regular.woff":[["Montserrat-Regular.4439be45.woff","theme/fonts/Montserrat/Montserrat-Regular.woff"],"theme/fonts/Montserrat/Montserrat-Regular.woff"],"E:\\Study\\FRONTEND\\FSD\\2-zadanie-fsd-parcel\\src\\theme\\fonts\\Montserrat\\Montserrat-Regular.ttf":[["Montserrat-Regular.1022c53d.ttf","theme/fonts/Montserrat/Montserrat-Regular.ttf"],"theme/fonts/Montserrat/Montserrat-Regular.ttf"],"E:\\Study\\FRONTEND\\FSD\\2-zadanie-fsd-parcel\\src\\theme\\fonts\\Material-design-icons\\MaterialIcons-Regular.eot":[["MaterialIcons-Regular.beeeab3c.eot","theme/fonts/Material-design-icons/MaterialIcons-Regular.eot"],"theme/fonts/Material-design-icons/MaterialIcons-Regular.eot"],"E:\\Study\\FRONTEND\\FSD\\2-zadanie-fsd-parcel\\src\\theme\\fonts\\Material-design-icons\\MaterialIcons-Regular.woff2":[["MaterialIcons-Regular.b2f4e5be.woff2","theme/fonts/Material-design-icons/MaterialIcons-Regular.woff2"],"theme/fonts/Material-design-icons/MaterialIcons-Regular.woff2"],"E:\\Study\\FRONTEND\\FSD\\2-zadanie-fsd-parcel\\src\\theme\\fonts\\Material-design-icons\\MaterialIcons-Regular.woff":[["MaterialIcons-Regular.459e60f8.woff","theme/fonts/Material-design-icons/MaterialIcons-Regular.woff"],"theme/fonts/Material-design-icons/MaterialIcons-Regular.woff"],"E:\\Study\\FRONTEND\\FSD\\2-zadanie-fsd-parcel\\src\\theme\\fonts\\Material-design-icons\\MaterialIcons-Regular.ttf":[["MaterialIcons-Regular.997c1c56.ttf","theme/fonts/Material-design-icons/MaterialIcons-Regular.ttf"],"theme/fonts/Material-design-icons/MaterialIcons-Regular.ttf"],"_css_loader":"C:/Users/gleb/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"C:/Users/gleb/AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
+},{"E:\\Study\\FRONTEND\\FSD\\2-zadanie-fsd-parcel\\src\\theme\\fonts\\Quicksand\\Quicksand-Bold.svg":[["Quicksand-Bold.568e3ecc.svg","theme/fonts/Quicksand/Quicksand-Bold.svg"],"theme/fonts/Quicksand/Quicksand-Bold.svg"],"E:\\Study\\FRONTEND\\FSD\\2-zadanie-fsd-parcel\\src\\theme\\fonts\\Quicksand\\Quicksand-Bold.woff":[["Quicksand-Bold.44189749.woff","theme/fonts/Quicksand/Quicksand-Bold.woff"],"theme/fonts/Quicksand/Quicksand-Bold.woff"],"E:\\Study\\FRONTEND\\FSD\\2-zadanie-fsd-parcel\\src\\theme\\fonts\\Quicksand\\Quicksand-Bold.ttf":[["Quicksand-Bold.8a513087.ttf","theme/fonts/Quicksand/Quicksand-Bold.ttf"],"theme/fonts/Quicksand/Quicksand-Bold.ttf"],"E:\\Study\\FRONTEND\\FSD\\2-zadanie-fsd-parcel\\src\\theme\\fonts\\Montserrat\\Montserrat-Regular.svg":[["Montserrat-Regular.26be7165.svg","theme/fonts/Montserrat/Montserrat-Regular.svg"],"theme/fonts/Montserrat/Montserrat-Regular.svg"],"E:\\Study\\FRONTEND\\FSD\\2-zadanie-fsd-parcel\\src\\theme\\fonts\\Montserrat\\Montserrat-Regular.woff":[["Montserrat-Regular.4439be45.woff","theme/fonts/Montserrat/Montserrat-Regular.woff"],"theme/fonts/Montserrat/Montserrat-Regular.woff"],"E:\\Study\\FRONTEND\\FSD\\2-zadanie-fsd-parcel\\src\\theme\\fonts\\Montserrat\\Montserrat-Regular.ttf":[["Montserrat-Regular.1022c53d.ttf","theme/fonts/Montserrat/Montserrat-Regular.ttf"],"theme/fonts/Montserrat/Montserrat-Regular.ttf"],"_css_loader":"C:/Users/gleb/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"C:/Users/gleb/AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -11317,34 +11317,26 @@ require("./dropdown.scss");
       maxItems: Infinity,
       minItems: 0,
       items: {},
-      multiple: false
+      multiple: false,
+      width: 320
     };
     this.each(function () {
       var settings = $.extend({}, defaults, options);
       var $this = $(this);
-      var $name = $this.find(".dropdown__text");
+      var $head = $this.find(".dropdown__head");
+      var $text = $this.find(".dropdown__text");
+      var $icon = $this.find(".dropdown__icon");
       var $list = $this.find(".dropdown__list");
       var $clearBtn = $this.find(".dropdown__clear");
       var $applyBtn = $this.find(".dropdown__apply");
-      var $items = $this.find(".dropdown__item").map(function () {
-        return {
-          item: $(this),
-          value: $(this).attr("value"),
-          text: $(this).find(">span").text(),
-          sum: $(this).attr("minItems"),
-          minItems: $(this).attr("minItems"),
-          maxItems: $(this).attr("maxItems")
-        };
-      });
+      var $items = null;
       var minSum = 0;
-      $items.each(function () {
-        if (this.sum) minSum += parseInt(this.sum);
-      });
       var totalSum = 0;
+      var isHidden = true;
       var multiple = $this.attr("multiple") ? true : settings.multiple;
-      var isHidden = true; // Обработка нажатия на дропдаун
+      setVariables(); // Обработка нажатия на дропдаун
 
-      $name.on("click", function () {
+      $head.on("click", function () {
         toggleDropdown();
       }); // Обработка кнопки применить
 
@@ -11352,11 +11344,38 @@ require("./dropdown.scss");
         toggleDropdown();
       });
 
+      function setVariables() {
+        $items = $this.find(".dropdown__item").map(function () {
+          return {
+            item: $(this),
+            value: $(this).attr("value"),
+            text: $(this).find(">span").text(),
+            sum: $(this).attr("minItems"),
+            minItems: $(this).attr("minItems"),
+            maxItems: $(this).attr("maxItems")
+          };
+        });
+        $items.each(function () {
+          if (this.sum) minSum += parseInt(this.sum);
+        });
+        var width = $this.attr("width") ? $this.attr("width") : settings.width;
+        $this.css("width", width);
+      }
+
       function toggleDropdown() {
         $list.toggleClass("show");
         var afterContentText = isHidden ? "keyboard_arrow_up" : "keyboard_arrow_down";
-        $name.attr("data-after", afterContentText);
+        $icon.text(afterContentText);
         isHidden = !isHidden;
+      }
+
+      function hideDropdown() {
+        if (!isHidden) {
+          $list.toggleClass("show");
+          var afterContentText = isHidden ? "keyboard_arrow_up" : "keyboard_arrow_down";
+          $icon.text(afterContentText);
+          isHidden = !isHidden;
+        }
       } // Обработка кнопки очистки
 
 
@@ -11442,11 +11461,11 @@ require("./dropdown.scss");
               isFirst = false;
             } else text += ", ".concat(this.sum, " ").concat(this.text);
           });
-          $name.text(text);
+          $text.text(text);
         } else {
           var _text = "гость";
           if (totalSum > 1 && totalSum < 5) _text = "гостя";else if (totalSum >= 5 && totalSum < 21) _text = "гостeй";
-          if (totalSum === 0) $name.text("Сколько гостей");else $name.text("".concat(totalSum, " ").concat(_text));
+          if (totalSum === 0) $text.text("Сколько гостей");else $text.text("".concat(totalSum, " ").concat(_text));
         }
       }
     });
@@ -11497,7 +11516,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55726" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59766" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
