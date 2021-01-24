@@ -11306,13 +11306,17 @@ require("./textfield.scss");
   $.fn.textfield = function (options) {
     var defaults = {
       width: 320,
-      withButton: false
+      withButton: false,
+      onButtonClick: function onButtonClick() {}
     };
     this.each(function () {
       var settings = $.extend({}, defaults, options);
       var $this = $(this);
       var $button = $this.find(".textfield__button");
       setTextfield();
+      $button.on("click", function () {
+        settings.onButtonClick();
+      });
 
       function setTextfield() {
         var width = $this.attr("width") ? $this.attr("width") : settings.width;
@@ -11509,7 +11513,25 @@ $(function () {
     maxItems: 5
   });
 });
-},{"./dropdown.scss":"components/dropdown/dropdown.scss"}],"main.js":[function(require,module,exports) {
+},{"./dropdown.scss":"components/dropdown/dropdown.scss"}],"components/checkbox/checkbox.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"E:\\Study\\FRONTEND\\FSD\\2-zadanie-fsd-parcel\\src\\theme\\icons\\check.svg":[["check.c39d44ae.svg","theme/icons/check.svg"],"theme/icons/check.svg"],"_css_loader":"C:/Users/gleb/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/checkbox/checkbox.js":[function(require,module,exports) {
+"use strict";
+
+require("./checkbox.scss");
+},{"./checkbox.scss":"components/checkbox/checkbox.scss"}],"components/radio/radio.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"C:/Users/gleb/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/radio/radio.js":[function(require,module,exports) {
+"use strict";
+
+require("./radio.scss");
+},{"./radio.scss":"components/radio/radio.scss"}],"main.js":[function(require,module,exports) {
 "use strict";
 
 require("./main.scss");
@@ -11519,7 +11541,11 @@ require("./jquery-glob");
 require("./components/textfield/textfield");
 
 require("./components/dropdown/dropdown");
-},{"./main.scss":"main.scss","./jquery-glob":"jquery-glob.js","./components/textfield/textfield":"components/textfield/textfield.js","./components/dropdown/dropdown":"components/dropdown/dropdown.js"}],"C:/Users/gleb/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("./components/checkbox/checkbox");
+
+require("./components/radio/radio");
+},{"./main.scss":"main.scss","./jquery-glob":"jquery-glob.js","./components/textfield/textfield":"components/textfield/textfield.js","./components/dropdown/dropdown":"components/dropdown/dropdown.js","./components/checkbox/checkbox":"components/checkbox/checkbox.js","./components/radio/radio":"components/radio/radio.js"}],"C:/Users/gleb/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -11547,7 +11573,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62549" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62848" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

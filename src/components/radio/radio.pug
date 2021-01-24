@@ -1,0 +1,5 @@
+mixin radio(text="", id="", value="", name="")
+	.radio
+		input(type="radio", id=id, value=value, name=name)
+		label(for=value).radio__check
+		label(for=value).radio__text= text

@@ -1,7 +1,7 @@
 include ./components/textfield/textfield
 include ./components/dropdown/dropdown
-//- include ./components/drop-down/drop-down
-
+include ./components/checkbox/checkbox
+include ./components/radio/radio
 
 <!DOCTYPE html>
 html(lang="en")
@@ -24,7 +24,6 @@ html(lang="en")
 		+textfield({placeholder:"Email"})
 		+textfield({value:"This is pretty awesome"})
 		+textfield({placeholder:"Email", width:267, withButton:true})
-
 		-	
 			var items= [
 				{value:"1", text:"Взрослые", minItems:1, maxItems:5},
@@ -40,8 +39,12 @@ html(lang="en")
 				{value:"3", text:"Ванные комнаты", minItems:3},
 			]
 		+dropdown({items, multiple:true, width:266})
-		+dropdown({items, multiple:true, width:"266px"})
-		+dropdown({items, multiple:true, width:543})
+
+		+checkbox("Можно с питомцами", "check")
+		form
+			+radio("Можно с питомцами", "pet", "pet",  "radio")
+			+radio("Можно курить", "smoke","smoke", "radio")
+
 
 
 

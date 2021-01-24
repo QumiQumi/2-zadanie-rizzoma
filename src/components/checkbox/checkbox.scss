@@ -1,0 +1,35 @@
+@import "/theme/variables/colors.scss";
+
+.checkbox {
+    display: flex;
+    flex-wrap: nowrap;
+    > input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        width: 20px;
+        height: 20px;
+        margin: 0;
+        &:checked + .checkbox__check {
+            border: 1px solid #bc9cff;
+            display: block;
+            background-image: url("/theme/icons/check.svg");
+        }
+    }
+    &__check {
+        display: block;
+        align-items: center;
+        user-select: none;
+        box-sizing: border-box;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $dark-shade-25;
+        border-radius: 4px;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    &__text {
+        margin-left: 10px;
+        line-height: 18px;
+    }
+}

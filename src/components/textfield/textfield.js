@@ -4,6 +4,7 @@ import "./textfield.scss";
         let defaults = {
             width: 320,
             withButton: false,
+            onButtonClick: () => {},
         };
 
         this.each(function () {
@@ -12,6 +13,9 @@ import "./textfield.scss";
             let $button = $this.find(".textfield__button");
 
             setTextfield();
+            $button.on("click", function () {
+                settings.onButtonClick();
+            });
             function setTextfield() {
                 let width = $this.attr("width")
                     ? $this.attr("width")
