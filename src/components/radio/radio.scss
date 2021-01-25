@@ -5,8 +5,11 @@
     flex-wrap: nowrap;
     > input {
         position: absolute;
-        z-index: -1;
-        opacity: 0;
+        cursor: pointer;
+        outline: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
         width: 20px;
         height: 20px;
         margin: 0;
@@ -14,7 +17,6 @@
             border: 1px solid #bc9cff;
             &::after {
                 content: "";
-                background-color: green;
                 border-radius: 50%;
                 width: 12px;
                 height: 12px;
@@ -29,7 +31,7 @@
         user-select: none;
         width: 20px;
         height: 20px;
-        border: 1px solid rgba(31, 32, 65, 0.25);
+        border: 1px solid $dark-shade-25;
         box-sizing: border-box;
         border-radius: 50%;
     }

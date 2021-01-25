@@ -2,6 +2,7 @@ include ./components/textfield/textfield
 include ./components/dropdown/dropdown
 include ./components/checkbox/checkbox
 include ./components/radio/radio
+include ./components/toggle/toggle
 
 <!DOCTYPE html>
 html(lang="en")
@@ -41,6 +42,7 @@ html(lang="en")
 		+dropdown({items, multiple:true, width:266})
 
 		+checkbox("Можно с питомцами", "check")
+		+toggle("Получать спецпредложения", "toggle")
 		form
 			+radio("Можно с питомцами", "pet", "pet",  "radio")
 			+radio("Можно курить", "smoke","smoke", "radio")

@@ -1,0 +1,51 @@
+@import "/theme/variables/colors.scss";
+
+.toggle {
+    display: flex;
+    flex-wrap: nowrap;
+    > input {
+        position: absolute;
+        width: 40px;
+        height: 20px;
+        margin: 0;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: none;
+        box-sizing: border-box;
+        &:checked + .toggle__check {
+            border: 1px solid #bc9cff;
+            &::after {
+                background: $primary-gradient;
+                transform: translateX(22px); //full-2*border-4px
+            }
+        }
+    }
+    &__check {
+        transition: 0.2s;
+        display: flex;
+        align-items: center;
+        user-select: none;
+        box-sizing: border-box;
+        width: 40px;
+        height: 20px;
+        border: 1px solid $dark-shade-25;
+        border-radius: 4px;
+        border-radius: 10px;
+        &::after {
+            position: absolute;
+            content: "";
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            background: $dark-shade-25;
+            transform: translateX(4px);
+            transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+        }
+    }
+    &__text {
+        margin-left: 10px;
+        line-height: 18px;
+    }
+}
