@@ -1,0 +1,5 @@
+mixin checkbox(text="", id="", name="", value="")
+	.checkbox
+		input(type="checkbox", id=id, name=name, value=value)
+		label(for=id).checkbox__check
+		label(for=id).checkbox__text= text

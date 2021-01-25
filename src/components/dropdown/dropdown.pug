@@ -1,0 +1,31 @@
+//- options:
+	var items= [
+				{value:"car", text:"Сколько гостей"},
+				{value:"car", text:"Dominus"},
+				{value:"shit", text:"Gizmo"}
+			]
+mixin dropdown(options="")
+	.dropdown(multiple=options.multiple, width=options.width)
+		.dropdown__head
+			.dropdown__text(data-after="keyboard_arrow_down") Сколько гостей
+			i.dropdown__icon.material-icons keyboard_arrow_down
+		.dropdown__list
+			each item in options.items
+				div(
+					value=item.value, 
+					minItems=item.minItems, 
+					maxItems=item.maxItems
+				).dropdown__item
+					span #{item.text}
+					.dropdown__switcher
+						.dropdown__minus -
+						.dropdown__number 
+							span 0
+						.dropdown__plus +
+			.dropdown__toolbar
+				.dropdown__clear
+					h3 Очистить
+				.dropdown__apply 
+					h3 Применить
+
+					

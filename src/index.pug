@@ -1,20 +1,56 @@
-include ./components/input/input
+include ./components/textfield/textfield
+include ./components/dropdown/dropdown
+include ./components/checkbox/checkbox
+include ./components/radio/radio
+include ./components/toggle/toggle
+
 <!DOCTYPE html>
 html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title Document
-        
-    body
-        div
-            h1 This one is the sub-section or widget title
-            h2 Next one is the item title inside widgets
-            h3 This is a label or CTA text
-            |This is the body text which is used for most of the design, like paragraphs, lists, etc.
-        +input({placeholder:"Email"})
-        +input({value:"This is pretty awesome"})
-    foot
-        script(src='./main.js')
-        
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		title Document
+		script(src='./main.js')
+		link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+
+		
+	body
+		div
+			h1 This one is the sub-section or widget title
+			h2 Next one is the item title inside widgets
+			h3 This is a label or CTA text
+			|This is the body text which is used for most of the design, like paragraphs, lists, etc.
+
+		+textfield({placeholder:"Email"})
+		+textfield({value:"This is pretty awesome"})
+		+textfield({placeholder:"Email", width:267, withButton:true})
+		-	
+			var items= [
+				{value:"1", text:"Взрослые", minItems:1, maxItems:5},
+				{value:"2", text:"Дети", minItems:0, maxItems:6},
+				{value:"3", text:"Младенцы", minItems:0},
+			]
+
+		+dropdown({items})
+		-	
+			var items= [
+				{value:"1", text:"Спальни", minItems:1, maxItems:5},
+				{value:"2", text:"Кровати", minItems:1, maxItems:10},
+				{value:"3", text:"Ванные комнаты", minItems:3},
+			]
+		+dropdown({items, multiple:true, width:266})
+
+		+checkbox("Можно с питомцами", "check")
+		+toggle("Получать спецпредложения", "toggle")
+		form
+			+radio("Можно с питомцами", "pet", "pet",  "radio")
+			+radio("Можно курить", "smoke","smoke", "radio")
+
+
+
+
+
+	
+		
+		

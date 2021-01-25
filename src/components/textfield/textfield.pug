@@ -1,0 +1,11 @@
+//- options:
+	value
+	placeholder
+mixin textfield(options="")
+	.textfield(width=options.width, withButton=options.withButton)
+		input(
+			type="text", 
+			value=options.value, 
+			placeholder=options.placeholder,	
+		)
+		i.material-icons.textfield__button arrow_forward

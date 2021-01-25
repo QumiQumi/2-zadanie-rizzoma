@@ -1,0 +1,48 @@
+@import "/theme/variables/colors.scss";
+.textfield {
+    display: flex;
+    align-items: center;
+    width: 320px;
+    height: 44px;
+    background: #ffffff;
+    border: 1px solid $dark-shade-25;
+    border-radius: 4px;
+    box-sizing: border-box;
+    overflow: hidden;
+    line-height: 44px;
+    &:focus,
+    &:hover {
+        border: 1px solid $dark-shade-50;
+    }
+    input {
+        color: $dark-shade-25;
+        padding: 0 15px;
+        border: none;
+        outline: none;
+        line-height: inherit;
+        width: 100%;
+        height: 100%;
+        &:focus,
+        &:hover {
+            color: $dark-shade-75;
+        }
+        &::placeholder {
+            color: $dark-shade-25;
+        }
+    }
+    &__button {
+        display: none;
+        text-align: center;
+        width: 44px;
+        min-width: 44px;
+        height: 100%;
+        line-height: inherit;
+        background: $primary-gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        cursor: pointer;
+        &.show {
+            display: block;
+        }
+    }
+}

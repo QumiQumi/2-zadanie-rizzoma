@@ -1,0 +1,5 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+var _jquery = require('jquery');
+var _jqueryDefault = _parcelHelpers.interopDefault(_jquery);
+exports.default = window.$ = window.jQuery = _jqueryDefault.default;

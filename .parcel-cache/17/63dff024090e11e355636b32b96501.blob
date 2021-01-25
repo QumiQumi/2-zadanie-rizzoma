@@ -1,0 +1,6 @@
+require("./main.scss");
+require("./jquery-glob");
+require("./components/text-field/text-field");
+require("./components/dropdown/dropdown");
+// import "./components/i-q-dropdown/i-q-dropdown";
+console.log("Hello main.js!");
